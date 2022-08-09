@@ -1,0 +1,183 @@
+The ArrayList Class
+
+In java, normal arrays are of fixed length.
+ You can not change the size of arrays once they are defined. 
+That means, you must know in advance how large an array you want.
+ But sometimes, you may not know how large an array you want. 
+To overcome this situation, ArrayList is introduced in Collection framework.
+ 
+ArrayList, in simple terms, can be defined as re-sizable array.
+ ArrayList is same like normal array but it can grow and shrink dynamically to hold any number of elements. 
+ArrayList is a sequential collection of objects which increases or decreases in size as we add or delete the elements.
+
+In ArrayList, elements are positioned according to Zero-based index. 
+That means, elements are inserted from index 0. Default initial capacity of an ArrayList is 10. 
+This capacity increases automatically as we add more elements to arraylist. 
+You can also specify initial capacity of an ArrayList while creating it.
+
+ArrayList class implements List interface and extends AbstractList class. 
+It also implements 3 marker interfaces – RandomAccess, Cloneable and Serializable. 
+
+Properties Of ArrayList :
+
+Size of the ArrayList is not fixed. It can increase and decrease dynamically as we add or delete the elements.
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        //ArrayList with no size defined
+ 
+        ArrayList<Integer> list = new ArrayList<>();
+ 
+        //Adding elements to ArrayList
+ 
+        list.add(10);
+ 
+        list.add(20);
+ 
+        list.add(30);
+ 
+        list.add(40);
+ 
+        System.out.println(list.size());     //Output : 4
+ 
+        //Removing an element at index 0
+ 
+        list.remove(0);
+ 
+        System.out.println(list.size());    //Output : 3
+    }
+}
+ArrayList can have any number of null elements.
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        ArrayList<Integer> list = new ArrayList<>();
+ 
+        //Adding elements to ArrayList
+ 
+        list.add(100);
+ 
+        list.add(null);
+ 
+        list.add(2000);
+ 
+        list.add(null);
+ 
+        list.add(null);
+ 
+        //ArrayList having 3 null elements
+ 
+        System.out.println(list);     //Output : [100, null, 2000, null, null]
+    }
+}
+ArrayList can have duplicate elements.
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        ArrayList<Integer> list = new ArrayList<>();
+ 
+        //Adding elements to ArrayList
+ 
+        list.add(100);
+ 
+        list.add(100);
+ 
+        list.add(100);
+ 
+        list.add(100);
+ 
+        //ArrayList having 4 duplicate elements
+ 
+        System.out.println(list);     //Output : [100, 100, 100, 100]
+    }
+}
+As ArrayList implements RandomAccess, you can get, set, insert and remove elements of the ArrayList from  any arbitrary position.
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        ArrayList<Integer> list = new ArrayList<>();
+ 
+        //Adding elements to ArrayList
+ 
+        list.add(10);
+ 
+        list.add(20);
+ 
+        list.add(30);
+ 
+        list.add(40);
+ 
+        System.out.println(list);     //Output : [10, 20, 30, 40]
+ 
+        //Retrieving element at index 2
+ 
+        System.out.println(list.get(2));     //Output : 30
+ 
+        //Setting value of element at index 2
+ 
+        list.set(2, 2222);
+ 
+        System.out.println(list);      //Output : [10, 20, 2222, 40]
+ 
+        //Inserting element at index 1
+ 
+        list.add(1, 1111);
+ 
+        System.out.println(list);     //Output : [10, 1111, 20, 2222, 40]
+ 
+        //Removing element from index 3
+ 
+        list.remove(3);
+ 
+        System.out.println(list);    //Output : [10, 1111, 20, 40]
+    }
+}
+When you insert an element in the middle of the ArrayList, the elements at the right side of that position are shifted one position right and when you delete an element, they will be shifted one position left. This feature of the ArrayList causes some performance issues as shifting of elements is time consuming if ArrayList has lots of elements.
+Elements are placed according to Zero-based index. That means, first element will be placed at index 0 and last element at index n-1, where ‘n’ is the size of the ArrayList.
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        ArrayList<String> list = new ArrayList<String>();
+ 
+        list.add("First");
+ 
+        list.add("Second");
+ 
+        list.add("Third");
+ 
+        list.add("Fourth");
+ 
+        System.out.println(list);    //Output : [First, Second, Third, Fourth]
+    }
+}
+ArrayList is not synchronized. That means, multiple threads can use same ArrayList simultaneously.
+If you know the element, you can retrieve the position of that element.
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        ArrayList<String> list = new ArrayList<String>();
+ 
+        //Adding elements to ArrayList
+ 
+        list.add("First");
+ 
+        list.add("Second");
+ 
+        list.add("Third");
+ 
+        list.add("Fourth");
+ 
+        System.out.println(list);    //Output : [First, Second, Third, Fourth]
+ 
+        //Retrieving position of "Second" element
+ 
+        System.out.println(list.indexOf("Second"));     //Output : 1
+    }
+}
+
