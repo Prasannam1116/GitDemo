@@ -4,7 +4,7 @@ Java provides the Date class available in java.util package, this class encapsul
 
 The Date class supports two constructors as shown in the following table.
 
-Sr.No.	Constructor & Description
+Sr.No.	Constructor & Description(New)
 1	
 Date( )
 

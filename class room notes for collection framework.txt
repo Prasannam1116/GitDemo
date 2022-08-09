@@ -5,7 +5,8 @@ obj[2] = new Customer();
 
 Why Collection Framework?
 
-Collections are nothing but group of objects stored in well defined manner. 
+
+Ans:-  Collections are nothing but group of objects stored in well defined manner. 
 Earlier, Arrays are used to represent these group of objects. 
 But, arrays are not re-sizable. 
 size of the arrays are fixed. 
